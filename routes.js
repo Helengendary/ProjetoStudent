@@ -6,3 +6,6 @@ const home = require('./src/controllers/home');
 // Iniciando as rotas
 route.get('/', home.pagInicialGet);
 module.exports = route;
+
+const cadastro = require('./src/controllers/cadastro');
+route.post('/cdSala', cadastro.salaInsert);
