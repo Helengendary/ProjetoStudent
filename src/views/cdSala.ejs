@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script src="./script.js" defer></script>
+
+    <title>Cadastrar Sala</title>
+ </head>
+
+ <body>
+  <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+
+    <a class="mr-auto my-0 linkPrincipal" href="./index.ejs">
+    <h5 class="mr-2 " id="tituloColor">CONTROLE</h5>
+    <h5 class=""> de Estudantes</h5>
+    </a>
+
+    <nav class="my-2 my-md-0 mr-md-3">
+        <strong>Cadastrar:</strong>
+        <a class="p-2 text-dark" href="./cdAlunos.ejs">Alunos</a>
+        |
+        <a class="p-2 text-dark" href="cdSala.ejs">Sala</a>
+    </nav>
+  </header>
+
+
+  <main>
+    <form>
+      <h2>Cadastrar uma nova sala</h2>
+      
+      <div class="informa">
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Nome</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput2">Capacidade</label>
+          <input type="number" class="form-control" id="exampleFormControlInput2">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Cadastrar</button>
+
+      </div>
+    </form>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ </body>
+
+ <footer>
+
+ </footer>
+</html>

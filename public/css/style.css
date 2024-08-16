@@ -1,0 +1,73 @@
+form {
+
+    margin-top: 10%;
+    margin-left: 40%;
+}
+
+.informa {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#tituloColor {
+    font-weight: 800;
+    background: linear-gradient(to right, red, rgb( 255, 0, 127), #9D00FF, #1E90FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.indexDrop {
+    left: 80%;
+}
+.indexDrop select{
+    margin-left: 1%;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.card-img-top {
+    object-fit: cover;
+    border-radius: 100% !important;
+    width: 60% !important;
+    border: 2px solid black;
+    margin: 2%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drops{
+    width: 10%;
+}
+
+.linkPrincipal {
+    display: flex;
+    color: black;
+}
+
+.linkPrincipal:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.informa img {
+    width: 30%;
+    margin-left: 35%;
+}
+
+#files {
+ display: none;   
+}

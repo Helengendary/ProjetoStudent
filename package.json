@@ -1,0 +1,20 @@
+{
+  "name": "aprendizdeweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aprendizdeweb": "file:",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mssql": "^11.0.1",
+    "nodemon": "^3.1.4",
+    "sequelize": "^6.37.3"
+  }
+}
