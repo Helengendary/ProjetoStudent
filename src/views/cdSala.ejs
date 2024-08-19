@@ -20,26 +20,26 @@
 
     <nav class="my-2 my-md-0 mr-md-3">
         <strong>Cadastrar:</strong>
-        <a class="p-2 text-dark" href="./cdAlunos.ejs">Alunos</a>
+        <a class="p-2 text-dark" href="/cdAlunos">Alunos</a>
         |
-        <a class="p-2 text-dark" href="cdSala.ejs">Sala</a>
+        <a class="p-2 text-dark" href="/cdSala">Sala</a>
     </nav>
   </header>
 
 
   <main>
-    <form action="/cdSala"> 
+    <form action="/cdSala" method="post"> 
       <h2>Cadastrar uma nova sala</h2>
       
       <div class="informa">
 
         <div class="form-group">
           <label for="Nome">Nome</label>
-          <input type="text" class="form-control" id="Nome">
+          <input type="text" class="form-control" id="Nome" name="nome">
         </div>
         <div class="form-group">
           <label for="Capacidade">Capacidade</label>
-          <input type="number" class="form-control" id="Capacidade">
+          <input type="number" class="form-control" id="Capacidade" name="capacidade">
         </div>
         <button type="submit" class="btn btn-primary mb-2">Cadastrar</button>
 

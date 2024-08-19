@@ -2,7 +2,7 @@
 let photo = document.getElementById('labelImg');
 let file = document.getElementById('files');
 
-
+console.log("fdshfds")         
 
 file.addEventListener('change', () => {
 
@@ -20,7 +20,6 @@ file.addEventListener('change', () => {
     
     // Coloca o caminho da imagem no Source da tag IMG
     reader.onload = () => {
-        photo.src = reader.result
+        photo.setAttribute('src', reader.result)
     }
-
 });

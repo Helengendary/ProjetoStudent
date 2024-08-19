@@ -1,5 +1,7 @@
 const Sequelize = require('sequelize');
 const database = require('../config/bd');
+const sala = require('../model/sala');
+
 const aluno = database.define('Aluno', {
     IDAluno: {
         type: Sequelize.INTEGER,

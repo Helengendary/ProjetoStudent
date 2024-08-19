@@ -9,3 +9,7 @@ module.exports = route;
 
 const cadastro = require('./src/controllers/cadastro');
 route.post('/cdSala', cadastro.salaInsert);
+route.post('/cdAlunos', cadastro.alunoInsert);
+
+route.get('/cdSala', cadastro.sala);
+route.get('/cdAlunos', cadastro.aluno);

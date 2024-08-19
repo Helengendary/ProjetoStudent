@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <script src="./script.js" defer></script>
+    <script src="javascript/script.js"defer></script>
 
     <title>Cadastrar Aluno</title>
  </head>
@@ -13,49 +13,47 @@
  <body>
   <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
 
-    <a class="mr-auto my-0 linkPrincipal" href="./index.ejs">
+    <a class="mr-auto my-0 linkPrincipal" href="index.ejs">
       <h5 class="mr-2 " id="tituloColor">CONTROLE</h5>
       <h5 class=""> de Estudantes</h5>
       </a>
   
     <nav class="my-2 my-md-0 mr-md-3">
         <strong>Cadastrar:</strong>
-        <a class="p-2 text-dark" href="cdAlunos.ejs">Alunos</a>
+        <a class="p-2 text-dark" href="/cdAlunos">Alunos</a>
         |
-        <a class="p-2 text-dark" href="cdSala.ejs">Sala</a>
+        <a class="p-2 text-dark" href="/cdSala">Sala</a>
     </nav>
   </header>
 
 
   <main>
-    <form>
+    <form action="/cdAlunos" method="post">
       <h2>Cadastrar um novo aluno</h2>
       
       <div class="informa">
 
-        <label for="files"><img id="labelImg" class="form-group" src="https://cdn-icons-png.flaticon.com/256/17/17004.png" alt=""></label>
-        <input type="file" id="files">
+        <label for="files"><img id="labelImg" class="form-group" src="https://cdn-icons-png.flaticon.com/256/17/17004.png" alt="Default"></label>
+        <input type="file" id="files" name="file">
 
         <div class="form-group">
           <label for="nome">Nome</label>
-          <input type="text" class="form-control" id="nome">
+          <input type="text" class="form-control" id="nome" name="nome">
         </div>
         <div class="form-group">
           <label for="idade">Idade</label>
-          <input type="number" class="form-control" id="idade">
+          <input type="number" class="form-control" id="idade" name="idade">
         </div>
         <div class="form-group">
           <label for="sexo">Sexo</label>
-          <input type="text" class="form-control" id="sexo">
+          <input type="text" class="form-control" id="sexo" name="sexo">
         </div>
         <div class="form-group">
           <label for="selectSala">Sala de aula</label>
-          <select class="form-control" id="selectSala">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <select class="form-control" id="selectSala" name="SalaDeAula" required>
+            <% for (let i=0; i<salas.length; i++) { %>
+              <option value='<%= salas[i].Nome %>' > <%= salas[i].Nome %> </option>
+            <% } %>
           </select>
         </div>
         <button type="submit" class="btn btn-primary mb-2">Cadastrar</button>
