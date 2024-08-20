@@ -31,23 +31,14 @@ module.exports = {
     async alunoInsert(req, res){
         const dados = req.body;
 
-        let foto = "https://cdn-icons-png.flaticon.com/256/17/17004.png"
-
         await aluno.create({
             Nome: dados.nome,
             Idade: dados.idade,
             Sexo: dados.sexo,
-            Foto: foto,
-            IDSala: 1
+            Foto: dados.file,
+            IDSala: dados.SalaDeAula
         });
 
         res.redirect('/');
-    },
-    async pagInicialGet(req, res){
-        const salas = await sala.findAll({
-        raw: true,
-        attributes: ['IDSala', 'Nome']
-        });
-        res.render('../views/index', {salas});
     }
 }

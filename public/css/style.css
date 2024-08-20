@@ -66,6 +66,8 @@ form {
 .informa img {
     width: 30%;
     margin-left: 35%;
+    border-radius: 100%;
+    height: 120px;
 }
 
 #files {

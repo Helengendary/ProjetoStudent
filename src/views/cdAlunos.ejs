@@ -33,8 +33,7 @@
       
       <div class="informa">
 
-        <label for="files"><img id="labelImg" class="form-group" src="https://cdn-icons-png.flaticon.com/256/17/17004.png" alt="Default"></label>
-        <input type="file" id="files" name="file">
+        <label for="files"><img id="labelImg" name="labelImg" class="form-group" src="https://cdn-icons-png.flaticon.com/256/17/17004.png" alt="Default"></label>
 
         <div class="form-group">
           <label for="nome">Nome</label>
@@ -51,13 +50,13 @@
         <div class="form-group">
           <label for="selectSala">Sala de aula</label>
           <select class="form-control" id="selectSala" name="SalaDeAula" required>
+            <option>Selecionar</option>
             <% for (let i=0; i<salas.length; i++) { %>
-              <option value='<%= salas[i].Nome %>' > <%= salas[i].Nome %> </option>
+              <option value='<%= salas[i].IDSala %>' > <%= salas[i].Nome %> </option>
             <% } %>
           </select>
         </div>
         <button type="submit" class="btn btn-primary mb-2">Cadastrar</button>
-
       </div>
     </form>
   </main>
