@@ -1,4 +1,3 @@
-
 let photo = document.getElementById('labelImg');
 let file = document.getElementById('files');     
 

@@ -32,7 +32,7 @@
       <form action="/" method="post">
         <label for="sala">Salas de aula:</label>
         <select class="drops" id="sala" onchange="this.form.submit()" name="nome">
-          <option>Selecionar</option>
+          <option hidden>Selecionar</option>
           <% for (let i=0; i<salas.length; i++) { %>
             <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>> <%= salas[i].Nome %> </option>
           <% } %>
@@ -42,13 +42,13 @@
       <div class="album py-5">
         <div class="container">
 
-          <h1>Alunas</h1>
+          <h1>Alunos</h1>
 
           <div class="row">
             <% for (let i=0; i<alunos.length; i++) { %>
               <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
-                  <img class="card-img-top" src="https://avatars.githubusercontent.com/u/137627315?v=4" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;" alt="Foto do aluno">
+                  <img class="card-img-top" src="imagens/<%= alunos[i].Foto %>" style="height: 225px; width: 100%; display: block;" alt="Foto do aluno">
                   <div class="card-body">
                     <h5 class="card-title"><%= alunos[i].Nome %></h5>
                     <p class="card-text">Idade: <%= alunos[i].Idade %></p>

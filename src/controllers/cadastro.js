@@ -31,11 +31,20 @@ module.exports = {
     async alunoInsert(req, res){
         const dados = req.body;
 
+        // Nome padrão da foto
+        let foto = 'usuario.png';
+
+        // Verificando se foi enviada alguma foto
+        if (req.file) {
+            // Pegar novo nome da foto
+            foto = req.file.filename;
+        }
+
         await aluno.create({
             Nome: dados.nome,
             Idade: dados.idade,
             Sexo: dados.sexo,
-            Foto: dados.file,
+            Foto: foto,
             IDSala: dados.SalaDeAula
         });
 
