@@ -37,10 +37,13 @@
             <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>> <%= salas[i].Nome %> </option>
           <% } %>
         </select>
-
+        
         <a href="/editarSala/<%= id %>" class="btn" <%= !id? 'hidden' : '' %>>Editar Sala</a>
       </form>
-
+      
+      <!-- <% for (let i=0; i<salas.length; i++) { %>
+        <p <%= !id == salas[i].IDSala ? 'hidden': ''%>>Vagas disponiveis: <%= salas[i].Capacidade %></p>
+      <% } %> -->
 
       <div class="album py-5">
         <div class="container">
