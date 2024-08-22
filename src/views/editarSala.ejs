@@ -13,7 +13,7 @@
  <body>
   <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
 
-    <a class="mr-auto my-0 linkPrincipal" href="./index">
+    <a class="mr-auto my-0 linkPrincipal" href="/index">
     <h5 class="mr-2 " id="tituloColor">CONTROLE</h5>
     <h5 class=""> de Estudantes</h5>
     </a>
@@ -28,20 +28,20 @@
 
 
   <main>
-    <form action="/cdSala" method="post"> 
-      <h2>Cadastrar uma nova sala</h2>
+    <form action="/editarSala/<%= salas.IDSala %>" method="post"> 
+      <h2>Editar sala</h2>
       
       <div class="informa">
 
         <div class="form-group">
           <label for="Nome">Nome</label>
-          <input type="text" class="form-control" id="Nome" name="nome">
+          <input type="text" class="form-control" id="Nome" name="nome" value="<%= salas.Nome %>">
         </div>
         <div class="form-group">
           <label for="Capacidade">Capacidade</label>
-          <input type="number" class="form-control" id="Capacidade" name="capacidade">
+          <input type="number" class="form-control" id="Capacidade" name="capacidade" value="<%= salas.Capacidade %>">
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Cadastrar</button>
+        <button type="submit" class="btn btn-primary mb-2">Atualizar</button>
 
       </div>
     </form>

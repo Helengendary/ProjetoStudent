@@ -4,6 +4,14 @@ form {
     margin-left: 40%;
 }
 
+.forms {
+    margin-top: 0px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+    align-items: center;
+}
+
 .informa {
     width: 35%;
     display: flex;
@@ -51,6 +59,7 @@ form {
 
 .drops{
     width: 10%;
+    margin-left: 10px;
 }
 
 .linkPrincipal {

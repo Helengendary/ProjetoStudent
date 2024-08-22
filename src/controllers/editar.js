@@ -1,5 +1,7 @@
 const sala = require('../model/sala');
 const aluno = require('../model/aulo');
+const fs = require("fs");
+const { param } = require('../../routes');
 
 module.exports = {
 
@@ -44,6 +46,31 @@ module.exports = {
         },
         {
             where: { IDAluno: id }
+        });
+        res.redirect('/');
+    }
+    ,
+
+
+    async salas(req, res){
+        const parametro = req.params.id;
+        
+        const salas = await sala.findByPk(parametro, { raw: true, attributes: ['IDSala', 'Nome', 'Capacidade']});
+        const salitas = await sala.findAll({ raw: true, attributes: ['IDSala', 'Nome',]});
+
+        res.render('../views/editarSala', {salas, salitas});
+    },
+
+    async adicionarSala(req, res){
+        const dados = req.body;
+        const id = req.params.id;
+
+        await sala.update({
+            Nome: dados.nome,
+            Capacidade: dados.capacidade
+        },
+        {
+            where: { IDSala: id }
         });
         res.redirect('/');
     } 
