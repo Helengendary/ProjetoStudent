@@ -21,6 +21,23 @@ module.exports = {
         const dados = req.body;
         const id = req.params.id;
         
+        if (dados.envio == 'Excluir') {
+             // Recebendo a antiga foto do aluno
+             const antigaFoto = await aluno.findAll({
+                raw: true,
+                attributes: ['Foto'],
+                where: { IDAluno: id }
+            });
+            if (antigaFoto[0].Foto != 'usuario.png') fs.unlink(`public/img/${antigaFoto[0].Foto}`, ( err => { if(err) console.log(err); } ));
+
+            await aluno.detroy(
+                {where: { IDAluno: id }}
+            );
+
+            res.redirect('/');
+            return;
+        }
+
         if (req.file) {
             // Recebendo a antiga foto do aluno
             const antigaFoto = await aluno.findAll({
@@ -64,6 +81,30 @@ module.exports = {
     async adicionarSala(req, res){
         const dados = req.body;
         const id = req.params.id;
+
+        if (dados.envio == 'Excluir') {
+            // Recebendo a antiga foto do aluno
+            const alunos = await aluno.findAll({ raw: true, attributes: ['IDAluno', 'Foto'], where: { IDSala: id } });
+
+            for (let i = 0; i < alunos.length; i++) {
+             
+                const antigaFoto = await aluno.findAll({
+                   raw: true,
+                   attributes: ['Foto'],
+                   where: { IDAluno: id }
+               });
+               if (antigaFoto[0].Foto != 'usuario.png') fs.unlink(`public/img/${antigaFoto[0].Foto}`, ( err => { if(err) console.log(err); } ));
+    
+               await aluno.detroy(
+                   {where: { IDAluno: alunos[i].IDAluno }}
+               );
+            }
+
+           await sala.destroy({ where: { IDSala: id } });
+
+           res.redirect('/');
+           return;
+       }
 
         await sala.update({
             Nome: dados.nome,
