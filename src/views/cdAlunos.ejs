@@ -53,7 +53,17 @@
           <select class="form-control" id="selectSala" name="SalaDeAula" required>
             <option>Selecionar</option>
             <% for (let i=0; i<salas.length; i++) { %>
-              <option value='<%= salas[i].IDSala %>' > <%= salas[i].Nome %> </option>
+              <% let dist = 0; %>
+              <% for (let j=0; j<alunos.length; j++) { %>
+                <% if (alunos[j].IDSala == salas[i].IDSala) { %>
+                  <% dist += 1; %>
+                <% } %>
+                <% if ((j+1) == alunos.length) { %>
+                  <% if (dist != salas[i].Capacidade) { %>
+                    <option value='<%= salas[i].IDSala %>' > <%= salas[i].Nome %> </option>
+                <% } %>
+                <% } %> 
+              <% } %> 
             <% } %>
           </select>
         </div>

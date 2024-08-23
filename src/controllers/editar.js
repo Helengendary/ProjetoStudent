@@ -13,7 +13,7 @@ module.exports = {
             attributes: ['IDAluno', 'Nome', 'Idade', 'Sexo', 'Foto', 'IDSala']
         });
         
-        const salas = await sala.findAll({ raw: true, attributes: ['IDSala', 'Nome'] });
+        const salas = await sala.findAll({ raw: true, attributes: ['IDSala', 'Nome', 'Capacidade'] });
         res.render('../views/editarAluno', {salas, alunos});
     },
 

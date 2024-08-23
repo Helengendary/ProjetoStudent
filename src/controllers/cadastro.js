@@ -23,10 +23,17 @@ module.exports = {
         // Encontrando todas as salas disponíveis no SQL
         const salas = await sala.findAll({
             raw: true, // Retorna somente os valores de uma tabela, sem os metadados.
-            attributes: ['IDSala', 'Nome']
+            attributes: ['IDSala', 'Nome', 'Capacidade']
         });
+
+        
+        const alunos = await aluno.findAll({
+            raw: true,
+            attributes: ['IDAluno', 'Nome', 'Idade', 'Foto', 'IDSala'],
+        });
+
         // Renderizando e passando o nome das salas para o front
-        res.render('../views/cdAlunos', {salas});
+        res.render('../views/cdAlunos', {salas, alunos});
     },
     async alunoInsert(req, res){
         const dados = req.body;

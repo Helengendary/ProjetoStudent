@@ -33,6 +33,7 @@
         Salas de aula:
         <select class="drops" onchange="this.form.submit()" name="nome">
           <option hidden>Selecionar</option>
+
           <% for (let i=0; i<salas.length; i++) { %>
             <option value='<%= salas[i].IDSala %>' <%= id == salas[i].IDSala ? 'selected' : ''%>> <%= salas[i].Nome %> </option>
           <% } %>
@@ -41,9 +42,17 @@
         <a href="/editarSala/<%= id %>" class="btn" <%= !id? 'hidden' : '' %>>Editar Sala</a>
       </form>
       
-      <!-- <% for (let i=0; i<salas.length; i++) { %>
-        <p <%= !id == salas[i].IDSala ? 'hidden': ''%>>Vagas disponiveis: <%= salas[i].Capacidade %></p>
-      <% } %> -->
+      <p <%= !id? 'hidden' : '' %> style="margin-left: 1%"> Ocupação: 
+        <% for (let i=0; i<salas.length; i++) { %>
+          <% if (id == salas[i].IDSala) { %>
+            <% for (let j=0; j<alunos.length; j++) { %>
+              <% if (j+1 == alunos.length) { %>
+                <%= j+1 %> / <%= salas[i].Capacidade %> 
+              <% } %>
+            <% } %>
+          <% } %>
+        <% } %>
+      </p>
 
       <div class="album py-5">
         <div class="container">
